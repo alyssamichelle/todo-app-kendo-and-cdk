@@ -1,0 +1,35 @@
+h1 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+input, .todo {
+  padding: 0;
+  width: 100%;
+  display: block;
+  font-size: 18px;
+  line-height: 50px;
+  text-align: center;
+}
+
+input {
+  margin: 25px 0;
+  height: 50px;
+}
+
+button.todo {
+  height: 50px;
+  background-image: none;
+  border: none;
+  border-radius: 0;
+  color: white;
+  overflow: hidden;
+  transition: 125ms ease background-color;
+}
+
+$todos: 45;
+@for $i from 1 through $todos {
+  .todo:nth-last-child(#{$i}n) {
+    background-color: hsl((360deg / $todos * $i), 75%, 75%);
+  }
+}

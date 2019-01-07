@@ -1,0 +1,12 @@
+<div @todosWrapper>
+  <h1>Todos</h1>
+  <input kendoTextBox #itemInput (keyup.enter)="addTodo(itemInput)"
+    placeholder="Add a todo item" />
+
+  <div *ngIf="todos" class="list-group" >
+    <button kendoButton type="button" class="todo" @todoItem
+      *ngFor="let todo of todos; index as i" (click)="removeTodo(todo, i)">
+      {{todo}}
+    </button>
+  </div>   
+</div>
