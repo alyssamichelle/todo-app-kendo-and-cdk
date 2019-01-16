@@ -1,6 +1,7 @@
 import { trigger, transition, animate, style, keyframes, useAnimation, query, animateChild, group, stagger } from '@angular/animations';
 import { slideInAnimation, slideOutAnimation } from '../animations';
 import { Component } from '@angular/core';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'todo',
@@ -57,5 +58,9 @@ export class TodoComponent {
     if (i > -1) {
       this.todos.splice(i, 1);
     }
+  }
+  
+  reorderList(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.todos, event.previousIndex, event.currentIndex);
   }
 }

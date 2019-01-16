@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
     BrowserModule,
     BrowserAnimationsModule,
     ButtonsModule,
-    InputsModule
+    InputsModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
